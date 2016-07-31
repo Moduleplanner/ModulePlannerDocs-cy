@@ -1,25 +1,19 @@
 .. _links:
 
-====================================================
-Setting the more-info and free-standing links
-====================================================
+=========================================
+Gosod y linciau more-info a free-standing
+=========================================
 
-The more-info link
-===================
-**DISCLAIMER** *The set up of the more-info link assumes that exists a online
-version of your schools module handbook* **DISCLAIMER**
+Y linc more-info
+================
 
-You only need to save the part of the URL that is the same for each module. The
-part of the URL that is the same can be found in the :code:`settings.yml` file
-under the option :code:`info`, the part that changes for each module (the
-module-code.html part) is automatically added to the link.
+**YMWADIAD** *Mae gosodiau y linc more-info yn tybio fod yna fersiwn arlein o lawlyfr modiwlau eich ysgol* **YMWADIAD**
+
+Ond angen arbed y rhan o'r URL sy'n unfath ar gyfer pob modiwl. Gallwch ffeindio'r rhan unfath yma yn y ffeil :code:`settings.yml' o dan yr opsiwn :code:`info'. Mae'r rhan sy'n newid ar gyfer pob modiwl (y rhan module-code.html) yn cael ei ychwanegu i'r linc yn awtomatig.
 
 
-The free-standing link
-=======================
-This link is found on the homepage of the website and should therefore be a link
-to the page on the universities website that students will go to when they are
-applying to see what the degree they want to do will be like.
+Y linc free-standing
+====================
+Mae'r linc yma ar hafan y wefan a felly dylai hon fon yn linc i'r tudalen ar wefan y prifysgol lle mae myfyrwyr yn gweld beth mae'r gradd a ddewisiwyd fel.
 
-You can the URL for this in the :code:`settings.yml` file under the option
-:code:`free`.
+Gallwch osod y URL ar gyfer hwn yn y :code:`settings.yml' o dan yr opsiwn :code:`free'.

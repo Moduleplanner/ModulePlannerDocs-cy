@@ -1,37 +1,32 @@
 .. _courses:
 
-====================
-Degree Schemes
-====================
+================
+Cynlluniau Gradd
+================
 
-So you have inputed all of the modules into the system (see :ref:`modules` for
-how to do this) we now need to go about adding the degree schemes into the
-database.  Degree scheme infomation is kept in the :code:`courses.yml` file in
-the :code:`_data` folder. Like we did when we added modules there are several
-peices of infomation that we need before we can add a scheme:
+Felly rydych wedi ychwanegu'r holl modiwlau i mewn i'r system (gweler :ref:`modules` i weld sut i gwneud hwn) nawr rhaid ychwanegu cymlluniau gradd i'r cronfa ddata. Mae gwybodaeth cynlluniau gradd wedi'i cadw yn y ffeil :code:`courses.yml` yn y ffolder :code:`_data`. Y wybodaeth sydd angen yw:
 
-* Degree short
-* Name of the degree
-* Module codes for the 1 :sup:`st` year core and/or option modules
-* Module codes for the 2 :sup:`nd` year core and/or option modules
-* etc... (continue for each year of the degree)
+* Codau cenedlaethol y cynllyn gradd (y cod UCAS yn yr DU)
+* Enw'r gradd
+* Codau modiwl ar gyfer y modiwlau craidd ac opsiynnol ar gyfer y blwyddyn 1 :sup:`af`
+* Codau modiwl ar gyfer y modiwlau craidd ac opsiynnol ar gyfer yr 2 :cup:`ail` blwyddyn
+* ayyb... (parhewch ar gyfer pob blwyddyn y gradd)
 
-Example degree
+Gradd Engrheifftiol
 ===================
 
-The degree that I am going to add is called BSc Mathematics and has the short
-bsc.  This degree is three years long, and consits of the following module
-codes:
+Enw'r gradd byddaf yn ychwanegu yw BSc Mathematics, gyda'r enw byr bsc. Mae'n gradd tri blwyddyn, ac yn cynnwys y codau modiwl canlynnol:
 
-* 1 :sup:`st` year core: ma1001, ma1004, ma1005, ma1007, ma1500, ma1006, ma1003
-* 1 :sup:`st` year otional: ma0111, ma1300, ma1501
-* 2 :sup:`nd` year core: ma0221, ma0212, ma2004, ma2001, ma2002, ma2003
-* 2 :sup:`nd` year optional: ma0235, ma2005, ma2500, cm2203, ma2501, ma0213,	cm2207
-* 3 :sup:`rd` year optional: ma0332, ma3505, ma3504, ma3602, ma3601, ma3901, cm3201, cm3111
 
-This is what you write in courses.yml::
+* Blwyddyn 1 :sup:`af` craidd: ma1001, ma1004, ma1005, ma1007, ma1500, ma1006, ma1003
+* Blwyddyn 1 :sup:`af` opsiynnol: ma0111, ma1300, ma1501
+* 2 :sup:`ail` blwyddyn craidd: ma0221, ma0212, ma2004, ma2001, ma2002, ma2003
+* 2 :sup:`ail`bwyddyn opsiynnol: ma0235, ma2005, ma2500, cm2203, ma2501, ma0213,	cm2207
+* 3 :sup:`ydd` blwyddyn opsiynnol: ma0332, ma3505, ma3504, ma3602, ma3601, ma3901, cm3201, cm3111
 
-	- short: bsc
+Yn courses.yml ysgrifennwch::
+
+	- degree-code: G100
 	  name: BSc Mathematics
 	  modules:
 		  - core: ['ma1001', 'ma1004', 'ma1005', 'ma1007', 'ma1500', 'ma1006', 'ma1003']
@@ -43,20 +38,14 @@ This is what you write in courses.yml::
 		  - optional: ['ma0332', 'ma3505', 'ma3504', 'ma3602', 'ma3601', 'ma3901', 'cm3201', 'cm3111']
 
 
-Now that we have added BSc Mathematics to the database, we now need to create
-the html file for it.  This is housed in each of the folders where its name is
-the international code for a language that is used in on the site. (In the
-orignal repository for this we have two languages- Welsh and English therefore
-we have two folders called :code:`cy` and :code:`en` respectivly that hold the
-html files for the degrees).
+Nawr rydym wedi ychwanegu BSc Mathematics i'r cronfa ddata, mae angen i ni creu'r ffeil html iddo. Mae hwn yn byw yn y ffolder iaith. (Yn yr ystorfa gwreiddiol mae dau iaith - Cymraeg a Saesneg, felly mae ganddyn ni dau ffolder :code:`cy` a :code:`en` i dal y ffeiliau html).
 
-In the bsc.html file in en folder you would write::
+Yn y ffeilm bsc.html rhaid ysgrifennu::
 
 	---
 	layout: course
-	short: bsc
+	degree-code: G100
 	lang: en
 	---
 
-In the bsc.html file in the cy folder  the only difference would be that you
-write :code:`lang: cy` instead.
+Ar gyfer y ffeil G100.html yn y ffolder cy, yr unig wahaniaeth yw :code:`lang: cy' yn lle.

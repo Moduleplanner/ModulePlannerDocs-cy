@@ -1,50 +1,42 @@
 .. _modules:
 
-====================
-Modules
-====================
+========
+Modiwlau
+========
+Er mwyn ychwanegu modiwl i'r cronfa ddata, rhaid mewnbynnu data i fewn i'r ffeil :code:`modules.yml` yn y ffolder :code:`_data`. Cyn gwneud hwn, gwnewch yn siwr fod y wybodaeth canlynol ganddoch:
 
-In order to add a module to the database, you need to input data into the
-:code:`modules.yml` file in the :code:`_data` folder. Before you go and do this,
-you must first make sure that you have the following pieces of infomation:
+* Cod y modiwl
+* Enw'r modiwl
+* Gwerth credydau'r modiwl
+* Cod y modiwlau sydd angen eu gymryd cyn cymryd y modiwl yma
 
-* Module code
-* Module name
-* No. of credits this module is worth
-* Module codes for any modules required to take this module
+Os nad oes unrhyw rhagofynion gyda'r modiwl rydych yn trio ychwanegu, paid poenu, dyma dau engrhaifft o ychwanegu modiwl newydd: un gyda rhagofynion ac un heb rhagofynion.
 
-If the module that you are adding does not have any pre-requisites don't worry
-as I will now go through two examples of adding a new module: one with
-pre-requisites and one without to show how it is done in both cases.
+Engrhaifft 1: gyda rhagofynion
+==============================
 
-Example 1: with pre-requisites
-=================================
+Enw'r modiwl byddaf yn ychwanegu yw :code:`Elementary Fluid Dynamics`. Mae hwn werth :code:`10 credyd` gyda'r code :code:`ma0235`. Er mwyn cymryd y modiwl rhaid i'r myfyriwr cymryd modiwlau Mechanics 1 a Vector Calculus sydd a'r codau modiwl :code:`ma1300` a :code:`ma2301` yn y trefn yna.
 
-The module I am going to add is called :code:`Elementary Fluid Dynamics`.  This
-is a :code:`10 credit` module with the module code: :code:`ma0235`.  In order to
-take this module you must have first the modules Mechanics I and Vector
-Calculus which have the module codes :code:`ma1300` and :code:`ma2301`
-respectively.
-
-This is what you write in modules.yml::
+Dyma beth sydd rhaid ysgrifennu yn modules.yml::
 
 	- code: ma0235
 	  name: Elementary Fluid Dynamics
 	  credits: 10
 	  requires: ['ma1300', 'ma2301']
 
-Example 2: without pre-requisites
-====================================
+Engrhaifft 2: heb rhagofynion
+=============================
+
+Enw'r modiwl byddaf yn ychwanegu yw :code:`MOdelling with Differential Equations`. Mae hwn werth :code:`10 credyd` gyda'r code :code:`ma0232`.
 
 The module I am going to add is called :code:`Modelling with Differential
 Equations`.  This is a :code:`10 credit` module with the module code:
 :code:`ma0232`.
 
-This is what you write in modules.yml::
+Dyma beth sydd rhaid ysgrifennu yn modules.yml::
 
 	- code: ma0232
 	  name: Modelling with Differential Equations
 	  credits: 10
 
-You now know how add modules into the database. Once you have added all of your
-modules, you are ready to add in your school's :ref:`courses`.
+Rydych nawr yn gwbod sut i ychwanegu modiwlau i'r cronfa ddata. Unwaith rydych wedi ychwanegu'r holl modiwlau rydych yn barod i ychwanegu :ref:`courses` eich ysgol.

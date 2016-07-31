@@ -1,7 +1,7 @@
-Editing Content
-===============
+Golygu'r Cynnwys
+================
 
-Contents:
+Cynnwys:
 
 .. toctree::
    :maxdepth: 2

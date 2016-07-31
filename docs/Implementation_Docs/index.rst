@@ -1,23 +1,18 @@
-Implementation Details
-======================
+Manylion Gweithrediad
+=====================
 
-In this section we have the documentation detailing how the site is implemented.
-You do not need to worry about what is contained here unless you are a developer
-looking to contribute to the project.
+Yn yr adran yma mae'r dogfennaeth ar gyfer sut mae'r wefan an gweithredu. Does dim angen poenu dros yr hyn sydd fan hyn heblaw eich fod yn datblygwr ac eisiau cyfrannu i'r prosiect.
 
-This section is divided into two parts:
+Mae'r adran yma mewn dau rhan:
 
-- **Core:** This section details how the main feature of the module planner is
-  implemented - the selection of modules and their dependencies.
-- **Extras:** This section goes over a few other smaller features such as
-  the implementation of support for multiple languages.
+- *Craidd:* Mae'r adran yma yn dangos sut mae prof nodweddion y wefan yn gweithredu - y set o fodiwlau a'i dibyniaethau.
+- *Pethau ychwanegol:* Mae'r adran yma yn mynd dros cwpl o nodweddion arall fel chefnogaeth ar gyfer mwy nag un iaith.
 
 ========
-The Core
+Y Craidd
 ========
 
-The core itself has two main concerns the translation of the data in the
-database to the HTML that we can interact with using Javascript.
+Mae gan y craidd dau consyrn ar gyfer cyfieithu data o'r cronfa ddata i fewn i HTML i fedru rhyngweithio gyda Javascript.
 
 .. toctree::
    :maxdepth: 1
@@ -26,8 +21,7 @@ database to the HTML that we can interact with using Javascript.
    planner-header.rst
    module-html.rst
 
-Then there is the actual Javascript which handles the logic behind selecting
-modules
+Yna mae'r Jacvascript ei hun sy'n trafod rhesymeg dewis y modiwlau.
 
 .. toctree::
    :maxdepth: 1
@@ -35,12 +29,11 @@ modules
    module-selection.rst
    
 
-======
-Extras
-======
+=================
+Pethau Ychwanegol
+=================
 
-Here you will find the documentation for some of the smaller features which go
-into module planner that aren't directly related to the selection of modules.
+Fan hyn mae dogfennaeth ar gyfer nodweddion arall y Cynllunydd Modiwlau, nodweddion syss ddim yn ymwneud gyda dewis y modiwlau.
 
 .. toctree::
    :maxdepth: 1

@@ -1,39 +1,31 @@
 .. _theme-changer:
 
-Theme Changer
-=============
+Newidiwr Thema
+==============
 
-This page details how the theme changer is implemented. On
-:ref:`the-planner-header` page we went through how we added a dropdown menu to
-the header on the page containing all the themes currently installed on the
-site. Here we go through the Javascript required to enable the user to make a
-choice and have the respective theme applied to the site.
+Mae'r tudalen yma yn dangos sut mae'r newidiwr thema yn gweithredu. Ar y tudalen :ref:`the-planner-header` eithon ni twy sut ychwanegon ni dewislen dropdown i'r pennawd ar y tudalen sy'n cynnwys holl themau sydd wedi'i osod ar y wefan ar hyn o bryd. Fan hyn rydym yn mynd trwy'r Javascript sydd angen i gwneud dewisiad ac gymhwyso'r thema yna.
+
 
 .. highlight:: html
 
-As you probably know "themes" are made with CSS stylesheets and are loaded in
-the :code:`<head>` section of the HTML page as follows::
+Mae "themau" wedi'i creu gan stylesheets CSS ac wedi'i llwytho yn y rhan :code:`<head>` y dudalen HTML::
 
     <link rel="stylesheet" href="/path/to/file.css">
 
-Changing the :code:`href` attribute will get the browser to fetch and apply a
-new stylesheet hence a new "theme".
+Mae newid y priodoledd :code:`href` yn galluogu'r porwr derbyn a gymhwyso'r stylesheet newydd, ac felly "thema" newydd.
 
-=========
-The Setup
-=========
+=======
+Y Setup
+=======
 
 .. highlight:: javascript
 
-Before diving into the details let's walk through the code that is run as the
-page loads to get a feel for how the system works. First we define a few
-selectors that will be useful throughout::
+Gadewch i ni cerdded trwy y cod sy'n cael ei rhedeg wrth i'r tudalen llwytho. Yn gyntaf diffiniwn rhai newidynnau::
 
     var stylesheet = "link#theme-def";
     var themechooser = "select#theme-chooser";
 
-Next we see if the user has a preference previously saved and if so we apply
-it, else we just apply the default theme::
+Yna rydym yn gweld os yw'r defnyddiwr wedi safio ynrhyw ffafriaeth blaenorol, ac yna gymhwyso'r thema yna neu'r thema diofyn::
 
     if (localStorage.theme) {
 
@@ -43,8 +35,7 @@ it, else we just apply the default theme::
         changeTheme("dark");
     }
 
-Finally we need to hook into the dropdown's change event to apply changes when a
-user makes a choice::
+Yna rhaid dweud wrth y dewislen dropdown i newid y thema pan mae defnyddiwr yn dewis thema newydd::
 
     $(themechooser).chnage(function () {
 
@@ -52,26 +43,23 @@ user makes a choice::
         changeTheme(new_theme);
     });
 
-Now we only have to write the :code:`changeTheme` function
+Ond angen ysgrifennu'r ffwthiant :code:`changeTheme` sydd ar ol.
 
-=========================
-The Change Theme Function
-=========================
+========================
+Y Ffwythiant Newid Thema
+========================
 
-So we need a function which takes the filename for a theme (without the
-extension) and get the browser to load and apply it. Thankfully jQuery makes
-this really easy for us::
+Mae angen ffwythiant sy'n cymryd i fewn enw ffeil ar gyfer thema (heb yr estyniad), ac sy'n gwneud i'r porwr llwytho a gymhwyso'r thema yna. Diolch i jQuery mae hwn yn hawdd::
 
     var changeTheme = function(shortname) {
   
         $(stylesheet).attr("href", "/css/" + shortname + ".css");
 
-Next we make sure the dropdown matches the new theme::
+Nesa gwnewch yn siwr fod y dewislen dropdown yn cyfateb a'r thema newydd::
 
     $(themechooser).val(shortname);
 
-Finally we check to see if the user's browser supports local storage and if so
-we save their preference::
+Yn olaf rhaid safio'r dewis hwn yn y storfa lleol os oes yna storfa lleol::
 
     if (typeof(Storage)) {
         localStorage.setItem("theme", shortname);

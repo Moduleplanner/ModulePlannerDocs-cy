@@ -1,41 +1,35 @@
 .. _language:
 
-=============
-Languages
-=============
+=========
+Ieithoedd
+=========
 
-The default language for the Module Planner website is English but you also have
-the option to view it in Welsh.  To add another language to the database you
-need to input data into the :code:`language.yml` file in the :code:`_data`
-folder.  Before you add a new language, you need to get the translations for the
-following words/phrases:
+Yr iaith diofyn ar gyfer y Cynllunydd Modiwlau yw Saesneg, ond mae hefyd yr opsiwn i'w weld yn Gymraeg. I ychwanegu iaith arall i'r cronfa ddata mae angen mewnbynnu'r data o fewn i'r ffeil :code:`language.yml' yn y ffolder :code:`_data'. Cyn ychwanegu iaith newydd, mae angen cyfeithiadau'r geiriau/brawddegau yma:
 
-* Year
-* here
-* Theme
-* Clear Selected
-* Credits
-* Language
-* Requires
-* More info
-* Please choose your degree
-* Change your degree scheme
-* Credits chosen
-* As this is maintainted by students, the infomation may not be completely correct.
-* This is only the standard modules you can take during your degree, please click
-* to see all the possible modules for your degree.
+* Blwyddyn
+* yma
+* Thema
+* Credydau
+* Iaith
+* modiwlau ofynnol
+* Mwy o wybodaeth
+* Clirio dewisiadau
+* Credydau a ddewiswyd
+* Dewiswch eich cynllun gradd os gwelwch yn dda
+* Newidwch eich cynllun gradd
+* Gan fod hwn yn cael ei chynnal gan fyfyrwyr, efallai na fydd y wybodaeth yn gwbl gywir.
+* Ond y modiwlau safonol y gallwch eu cymryd yn ystod eich gradd sydd fan hyn, cliciwch i weld yr holl fodiwlau posib ar gyfer eich gradd.
+* Gan fod hwn wedi'i cynnal gan myfyrwyr, efallai nad yw'r holl wybodaeth yn gywir.
 
-You also need the international language code (see `Language-codes
+Mae hefyd angen cod rhyngwladol yr iaith (gweler`Language-codes
 <http://www.sitepoint.com/web-foundations/iso-2-letter-language-codes/>`_
-for help) for your language and the translation of your school name.
+am gymorth) a cyfieithiad enw'r ysgol.
 
-Example: Adding Spanish
-===========================
 
-The international language code for Spanish is :code:`es` and the name of my
-school is: :code:`School of Mathematics` which in Spanish is:
-:code:`Escuela de Matemáticas`.  The Spanish translations of the above
-words/phrases are:
+Engrhaifft: Ychwanegu Sbaeneg
+=============================
+
+Cod rhyngwladol ar gyfer Sbaeneg yw :code:`es` ac enw fy ysgol yw: :code:`Yr Ysgol Mathemateg`, sy'n cyfeithu yn Sbaeng fel: :code:`Escuela de Matemáticas`. Cyfieithiadau'r geiriad/brawddegau uchod yw:
 
 * Año
 * aquí
@@ -48,17 +42,15 @@ words/phrases are:
 * Por favor elija su grado
 * Cambiar su esquema de grado
 * Créditos elegidos
+* Esto es sólo los módulos estándar que puede tomar durante su grado, para ver todos los posibles módulos para obtener su título por favor haga clic
 * Como esto se maintainted por los estudiantes, la infomación puede no ser del todo correcta.
-* Esto es sólo consta de los módulos estándar que puede tomar durante su grado, por favor haga clic
-* para ver todos los posibles módulos para su grado.
 
-This is what you write in language.yml::
+Yr hyn sydd angen ysgrifennu yn language.yml yw::
 
 	- name: Es
 	  year: Año
 	  here: aquí
 	  theme: Tema
-	  short: es
 	  reset: Claro Seleccionada
 	  credits: Crédito
 	  language: Idioma
@@ -67,10 +59,9 @@ This is what you write in language.yml::
 	  select-deg: Por favor elija su grado
 	  change-deg: Cambiar su esquema de grado
 	  school-name: Escuela de Matemáticas
+	  language-code: es
 	  credits-chosen: Créditos elegidos
+	  more-options: Esto es sólo los módulos estándar que puede tomar durante su grado, para ver todos los posibles módulos para obtener su título por favor haga clic
 	  disclaimer: Como esto se maintainted por los estudiantes, la infomación puede no ser del todo correcta.
-	  free1: Esto es sólo los módulos estándar que puede tomar durante su grado, por favor haga clic
-	  free2: para ver todos los posibles módulos para su grado.
 
-And you would finally create a folder in the base directory called :code:`es`
-where you will put the spanish version of the degree html files.
+Ac yna creu ffolder yn y ffolder sylfaenol wedi'i enwi :code:`es` lle byddwch yn rhoi'r fersiwn Sbaeneg o'r ffeiliau html y graddau.
